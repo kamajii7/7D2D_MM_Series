@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+<!-- Begin adding beverage creation in YeahScience tier 1 -->
+	<append xpath="/progression/perks/perk[@name='perkYeahScience']/effect_group/passive_effect[@level='1,5']/@tags">GrandSpartanIPA,HalfPastTrashed,ThePronto,Vodka,BlueberryAle,CoffeeStout,BigAle,GinnySue</append>
+<!-- End adding beverage creation in YeahScience tier 1 -->
+
+</configs>

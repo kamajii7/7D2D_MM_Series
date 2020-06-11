@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<!-- Start for creating new beverage buffs -->
+	<append xpath="/buffs">
+	<!-- Spartan MilkStout, gives 30% barter value, +2 to strength, and +10% to entity damage-->
+		<buff name="buffGrandSpartanMilkStout" name_key="buffGrandSpartanMilkStoutName" description_key="buffGrandSpartanMilkStoutDesc" tooltip_key="buffGrandSpartanMilkStoutTooltip" icon="ui_game_symbol_beer">
+			<stack_type value="duration"/>
+			<duration value="300"/>
+			<effect_group>
+				<passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="2" />
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
+			
+				<passive_effect name="EntityDamage" operation="perc_add" value="10">
+					<requirement name="HoldingItemHasTags" tags="melee" />
+				</passive_effect>
+			
+				<passive_effect name="BarteringBuying" operation="base_add" value=".3" />
+				<passive_effect name="BarteringSelling" operation="base_add" value=".3" />
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.2" fade="4" effect_name="Drunk"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="4" effect_name="Drunk"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned01"/>
+			</effect_group>
+		</buff>
+	<!-- End Spartan MilkStout-->
+	
+	<!-- Half Past Trashed gives perks from CharismaticNature and Blackstrap coffee-->
+		<buff name="buffHalfPastTrashed" name_key="buffHalfPastTrashedName" description_key="buffHalfPastTrashedDesc" tooltip_key="buffHalfPastTrashedTooltip" icon="ui_game_symbol_beer">
+			<stack_type value="duration"/>
+			<duration value="300"/> 
+				<effect_group>
+						<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value=".2" tags="melee"/>
+				</effect_group>
+				<effect_group>
+
+						<passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="2"/>
+						<passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="2"/>
+				</effect_group>
+
+				<effect_group>
+					
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="CharismaticNature" operation="set" value="0"/>
+				</effect_group>
+				
+
+				<effect_group>
+
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.2" fade="4" effect_name="Drunk"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="4" effect_name="Drunk"/>
+					<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned01"/>
+				</effect_group>
+		</buff>
+	<!-- End Half Past Trashed-->
+	
+	<!-- Logans Blueberry Ale gives higher ReloadSpeedMultiplier and movement -->
+		<buff name="buffLogansBlueberryAle" name_key="buffLogansBlueberryAleName" description_key="buffLogansBlueberryAleDesc" tooltip_key="buffLogansBlueberryAleTooltip" icon="ui_game_symbol_beer">
+			<stack_type value="duration"/>
+			<duration value="300"/>
+			<effect_group>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".75"/>
+			</effect_group>
+
+				<effect_group>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.2" fade="4" effect_name="Drunk"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="4" effect_name="Drunk"/>
+					<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned01"/>
+				</effect_group>
+		</buff>	
+	<!-- End Logans Blueberry Ale-->
+	
+	<!-- Coffee Stout gives better blackstrap coffee buff -->
+		<buff name="buffCoffeeStout" name_key="buffCoffeeStoutName" description_key="buffCoffeeStoutDesc" tooltip_key="buffCoffeeStoutTooltip" icon="ui_game_symbol_beer">
+			<stack_type value="duration"/>
+			<duration value="300"/>
+			
+			<display_value value=".buffCoffeeDisplay"/><display_value_format value="time"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffCoffeeDuration" operation="subtract" value="@$MetabolismDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffCoffeeDisplay" operation="set" value="@$buffCoffeeDuration"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffCoffeeDisplay" operation="divide" value="@$MetabolismDuration"/>
+			</effect_group>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$buffCoffeeDuration" operation="LTE" value="0"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffCoffeeDisplay" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffCoffeeDuration" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBlackStrapCoffee"/>
+			</effect_group>
+
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffCoffee"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.5">
+					<requirement name="NotHasBuff" buff="buffHealWaterMax"/>
+				</passive_effect>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.3">
+					<requirement name="HasBuff" buff="buffHealWaterMax"/>
+				</passive_effect>
+				<passive_effect name="HypothermalResist" operation="base_add" value="10"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.2" fade="4" effect_name="Drunk"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="4" effect_name="Drunk"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned01"/>
+			</effect_group>
+		</buff>
+			<!-- End Coffee Stout-->
+			<!-- Big Ale, +5 fortitude, +4 entity damage, stamina buff, and NO FUZZIES-->
+		<buff name="buffBigAle" name_key="buffBigAleName" description_key="buffBigAleDesc" tooltip_key="buffBigAleTooltip" icon="ui_game_symbol_beer">
+			<stack_type value="duration"/>
+			<duration value="300"/>
+			<effect_group>
+				<passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="5" />
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="4">
+					<requirement name="HoldingItemHasTags" tags="melee" />
+				</passive_effect>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="1" />
+				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned1"/>
+				<passive_effect name="HealthLoss" operation="perc_subtract" value="0.5"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="20" duration="29"/>
+			</effect_group>
+		</buff>
+		<!-- End Big Ale -->
+	
+
+		
+	</append>
+		<!-- End for new beverage buffs -->
+</configs>

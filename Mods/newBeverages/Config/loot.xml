@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<!-- Start for new Craft Beer Cooler block -->
+	<append xpath="/lootcontainers">
+		<lootgroup name="craftBeverages">
+			<item name="GrandSpartanMilkStout" prob="2.5"/>
+			<item name="HalfPastTrashed" prob="2.5"/>
+			<item name="LogansBlueberryAle" prob="2.5"/>
+			<item name="CoffeeStout" prob="2.5"/>
+			<item name="BigAle" prob="2.5"/>
+		</lootgroup>
+
+	<!-- End of cooler creation -->
+	<!-- frozen or refridgerated food, spoiled food -->
+	
+		<lootcontainer id="330" count="1,2" size="6,4" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="qualBaseTemplate">
+			<item group="craftBeverages" count="3,8"/>
+		</lootcontainer>
+	</append>
+</configs>

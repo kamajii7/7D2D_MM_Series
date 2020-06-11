@@ -1,0 +1,140 @@
+
+<!-- blackstrapcoffee item, for halfpast -->
+
+<item name="drinkJarBlackStrapCoffee">
+	<property name="Extends" value="drinkJarCoffee"/>
+	<property name="EconomicValue" value="200"/>
+	<property name="UnlockedBy" value="perkArtOfMiningBlackStrap"/>
+
+	<effect_group tiered="false">
+		<requirement name="NotHasBuff" buff="buffIsOnFire"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="24"/>
+			<display_value name="dStaminaRegen" value=".3"/>
+			<display_value name="dHypothermalResist" value="10"/>
+			<display_value name="dDuration" value="363"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCoffeeDuration" operation="add" value="363"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCoffeeDuration" operation="set" value="1083">
+			<requirement name="CVarCompare" cvar="$buffCoffeeDuration" operation="GT" value="1083"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables,buffBlackStrapCoffee"/>
+	</effect_group>
+
+	<effect_group tiered="false">
+		<requirement name="HasBuff" buff="buffIsOnFire"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+	</effect_group>
+</item>
+
+
+<!-- beer item -->
+
+<item name="drinkJarBeer">
+	<property name="HoldType" value="3"/>
+	<property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Mglass"/>
+	<property name="Weight" value="10"/>
+	<property name="Stacknumber" value="10"/> <!-- STK drink -->
+	<property name="EconomicValue" value="100"/>
+	<property name="UnlockedBy" value="perkMasterChef,drinkJarBeerSchematic"/>
+	<property name="DisplayType" value="waterBeer"/>
+	<property name="Group" value="Food/Cooking,CFDrink/Cooking,Medical"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="2"/>
+		<property name="Use_time" value="..."/>
+		<property name="Sound_start" value="player_drinking"/>
+		<property name="Create_item" value="drinkJarEmpty"/>
+	</property>
+	<effect_group tiered="false">
+		<requirement name="NotHasBuff" buff="buffIsOnFire"/>
+			<display_value name="dStaminaRegen" value=".5"/>
+			<display_value name="dEntityDamageBrawling" value="3"/>
+			<display_value name="dStunResist" value="1"/>
+			<display_value name="dDuration" value="30"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBeerDuration" operation="add" value="33"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBeerDuration" operation="set" value="93">
+			<requirement name="CVarCompare" cvar="$buffBeerDuration" operation="GT" value="93"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBeer"/>
+	</effect_group>
+
+	<effect_group tiered="false">
+		<requirement name="HasBuff" buff="buffIsOnFire"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+	</effect_group>
+</item>
+
+
+<!-- drinkJarGrandpasMoonshine item -->
+
+<item name="drinkJarGrandpasMoonshine"> <!-- Master Chef Tier 4 foods -->
+	<property name="HoldType" value="3"/>
+	<property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Mglass"/>
+	<property name="Weight" value="10"/>
+	<property name="Stacknumber" value="10"/> <!-- STK resource -->
+	<property name="EconomicValue" value="500"/>
+	<property name="UnlockedBy" value="perkMasterChef,drinkJarGrandpasMoonshineSchematic"/>
+	<property name="DisplayType" value="waterGrandpasMoonshine"/>
+	<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1"/>
+		<property name="Use_time" value="..."/>
+		<property name="Sound_start" value="player_drinking"/>
+		<property name="Create_item" value="drinkJarEmpty"/>
+	</property>
+	<effect_group tiered="false">
+		<display_value name="dFortitude" value="2"/>
+		<display_value name="dEntityDamage" value="4"/>
+		<display_value name="dStunResist" value="1"/>
+		<display_value name="dHealthLoss" value=".5"/>
+		<display_value name="dHealthAmount" value="600"/>
+		<display_value name="dStaminaRegen" value=".7"/>
+		<display_value name="dDuration" value="30"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffGrandpasMoonshineDuration" operation="add" value="32"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffGrandpasMoonshineDuration" operation="set" value="93">
+			<requirement name="CVarCompare" cvar="$buffGrandpasMoonshineDuration" operation="GT" value="93"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDrunkGrandpasMoonshine"/>
+	</effect_group>
+</item>
+
+
+<!-- drinkJarGrandpasMoonshine item -->
+
+<item name="drinkJarGrandpasLearningElixir"> <!-- Master Chef Tier 4 foods -->
+	<property name="HoldType" value="3"/>
+	<property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Mglass"/>
+	<property name="Weight" value="10"/>
+	<property name="Stacknumber" value="10"/> <!-- STK resource -->
+	<property name="EconomicValue" value="48"/>
+	<property name="UnlockedBy" value="perkMasterChef,drinkJarGrandpasLearningElixirSchematic"/>
+	<property name="DisplayType" value="waterGrandpasLearningElixir"/>
+	<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1"/>
+		<property name="Use_time" value="..."/>
+		<property name="Sound_start" value="player_drinking"/>
+		<property name="Create_item" value="drinkJarEmpty"/>
+	</property>
+	<effect_group tiered="false">
+		<display_value name="dPlayerExpGain" value=".2"/>
+		<display_value name="dDuration" value="243"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffGrandpasLearningElixirDuration" operation="add" value="243"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffGrandpasLearningElixirDuration" operation="set" value="723">
+			<requirement name="CVarCompare" cvar="$buffGrandpasLearningElixirDuration" operation="GT" value="723"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDrunkGrandpasLearningElixir"/>
+	</effect_group>
+</item>
+
+
+
+
+
+
+
+
+

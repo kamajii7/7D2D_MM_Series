@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<!-- Start for creating new beverages -->
+	<append xpath="/recipes">
+		<recipe name="GrandSpartanMilkStout" count="1" craft_area="chemistryStation" tags="learnable">
+			<ingredient name="resourceCropHopsFlower" count="16"/>
+			<ingredient name="drinkJarRiverWater" count="1"/>
+			<ingredient name="resourceCropGoldenrodPlant" count="15"/>
+			<ingredient name="foodCanTuna" count="1"/>
+			<ingredient name="medicalSplint" count="1"/>
+			<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
+		</recipe>
+
+		<recipe name="HalfPastTrashed" count="1" craft_area="chemistryStation" tags="learnable">
+			<ingredient name="resourceCropHopsFlower" count="8"/>
+			<ingredient name="drinkJarRiverWater" count="1"/>
+			<ingredient name="foodCornOnTheCob" count="3"/>
+			<ingredient name="resourceCropSnowberryPlant" count="10"/>
+			<ingredient name="resourceSnowBall" count="330"/>
+			<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
+		</recipe>
+
+		<recipe name="LogansBlueberryAle" count="1" craft_area="chemistryStation" tags="learnable">
+			<ingredient name="resourceCropHopsFlower" count="8"/>
+			<ingredient name="drinkJarRiverWater" count="1"/>
+			<ingredient name="foodCropBlueberries" count="30"/>
+			<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
+		</recipe>
+
+		<recipe name="CoffeeStout" count="1" craft_area="chemistryStation" tags="learnable">
+			<ingredient name="resourceCropHopsFlower" count="8"/>
+			<ingredient name="drinkJarRiverWater" count="1"/>
+			<ingredient name="resourceCropCoffeeBeans" count="10"/>
+			<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
+		</recipe>
+		
+		<recipe name="BigAle" count="1" craft_area="chemistryStation" tags="learnable">
+			<ingredient name="resourceCropHopsFlower" count="8"/>
+			<ingredient name="drinkJarBeer" count="4"/>
+			<ingredient name="foodCanSham" count="10"/>
+			<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
+		</recipe>
+		
+			
+	</append>
+		
+	<!-- End for creating new beverages -->
+</configs>

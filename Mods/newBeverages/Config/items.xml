@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<!-- Start for creating new beverages -->
+	<append xpath="/items">
+		<item name="GrandSpartanMilkStout">
+			<property name="Extends" value="drinkJarBeer" />
+			<property name="Material" value="Mglass" />
+				<property name="CustomIcon" value="drinkJarGrainAlcohol"/> 
+				<property name="CustomIconTint" value="685034"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Use_time" value="..."/>
+				<property name="Sound_start" value="ui_trader_purchase"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Create_item" value="drinkJarEmpty"/>
+			</property>
+			<effect_group tiered="false">
+				<passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="2"/>
+				<display_value name="dBartering" value=".3"/>
+				<display_value name="dDuration" value="183"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffGrandSpartanMilkStoutDuration" operation="add" value="183"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffGrandSpartanMilkStoutDuration" operation="set" value="543">
+					<requirement name="CVarCompare" cvar="$buffGrandSpartanMilkStoutDuration" operation="GT" value="543"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffGrandSpartanMilkStout"/>
+			</effect_group>
+		</item>
+
+		<item name="HalfPastTrashed">
+			<property name="Extends" value="drinkJarBeer" />
+			<property name="Material" value="Mglass" />
+				<property name="CustomIcon" value="drinkJarGrainAlcohol"/> 
+				<property name="CustomIconTint" value="0000ff"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Use_time" value="..."/>
+				<property name="Sound_start" value="recipe_unlocked"/>
+				<property name="Create_item" value="drinkJarEmpty"/>
+			</property>
+			<effect_group tiered="false">
+				<display_value name="dFortitude" value="2"/>
+				<display_value name="attAgility" value="2"/>
+				<display_value name="dEntityDamage" value="2"/>
+				<display_value name="dStunResist" value="1"/>
+				<display_value name="dStaminaRegen" value="1"/>
+				<display_value name="dDuration" value="183"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHalfPastTrashedDuration" operation="add" value="48"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffHalfPastTrashedDuration" operation="set" value="138">
+					<requirement name="CVarCompare" cvar="$buffHalfPastTrashedDuration" operation="GT" value="138"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffHalfPastTrashed"/>
+			</effect_group>
+
+			<effect_group tiered="false">
+				<requirement name="HasBuff" buff="buffIsOnFire"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+			</effect_group>
+		</item>
+
+		<item name="LogansBlueberryAle">
+			<property name="Extends" value="drinkJarBeer" />
+			<property name="Material" value="Mglass" />
+				<property name="CustomIcon" value="drinkJarGrainAlcohol"/> 
+				<property name="CustomIconTint" value="0019ff"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Use_time" value="..."/>
+				<property name="Sound_start" value="player_drinking"/>
+				<property name="Create_item" value="drinkJarEmpty"/>
+			</property>
+			<effect_group tiered="false">	
+				<passive_effect name="Mobility" operation="perc_add" value="0.02"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.014" tags="walking"/>
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.028" tags="running"/>
+				<display_value name="dStaminaChangeOT" value="0.028"/>
+				<display_value name="dStunResist" value="1"/>
+				<display_value name="dStaminaRegen" value="1"/>
+				<display_value name="dDuration" value="183"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffBandolier"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffBandolier"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffLogansBlueberryAleDuration" operation="add" value="48"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffLogansBlueberryAleDuration" operation="set" value="138">
+					<requirement name="CVarCompare" cvar="$buffLogansBlueberryAleDuration" operation="GT" value="138"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffLogansBlueberryAle"/>
+			</effect_group>
+		</item>
+
+		<item name="CoffeeStout">
+			<property name="Extends" value="drinkJarBeer" />
+			<property name="Material" value="Mglass" />
+				<property name="CustomIcon" value="drinkJarGrainAlcohol"/> 
+				<property name="CustomIconTint" value="51422b"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Use_time" value="..."/>
+				<property name="Sound_start" value="player_drinking"/>
+				<property name="Create_item" value="drinkJarEmpty"/>
+			</property>
+		<effect_group tiered="false">
+			<requirement name="NotHasBuff" buff="buffIsOnFire"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="24"/>
+				<display_value name="dStaminaRegen" value=".3"/>
+				<display_value name="dHypothermalResist" value="10"/>
+				<display_value name="dDuration" value="183"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCoffeeDuration" operation="add" value="363"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffCoffeeDuration" operation="set" value="1083">
+				<requirement name="CVarCompare" cvar="$buffCoffeeDuration" operation="GT" value="1083"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables,buffBlackStrapCoffee"/>
+		</effect_group>
+
+		</item>
+		
+		<item name="BigAle">
+			<property name="Extends" value="drinkJarBeer" />
+			<property name="Material" value="Mglass" />
+				<property name="CustomIcon" value="drinkJarGrainAlcohol"/> 
+				<property name="CustomIconTint" value="47300d"/>
+				<property name="EconomicValue" value="500"/>
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Use_time" value="..."/>
+				<property name="Sound_start" value="m136_reload_part_02"/>
+				<property name="Buff" value="buffYuccaJuiceCooling,buffExtinguishFireBuff"/>
+				<property name="Create_item" value="drinkJarEmpty"/>
+			</property>
+			<effect_group tiered="false">
+				<display_value name="dFortitude" value="2"/>
+				<display_value name="dEntityDamage" value="4"/>
+				<display_value name="dStunResist" value="1"/>
+				<display_value name="dStaminaRegen" value="1"/>
+				<display_value name="dDuration" value="183"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBigAleDuration" operation="add" value="48"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBigAleDuration" operation="set" value="138">
+					<requirement name="CVarCompare" cvar="$buffBigAleDuration" operation="GT" value="138"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBigAle"/>
+			</effect_group>
+		</item>
+	</append>
+	<!-- End for creating new beverages -->
+</configs>
