@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+<!-- Begin adding A16 POIs into RWG -->
+
+	<append xpath="/rwgmixer/prefab_rules/prefab_rule[@name='downtownGroup']">
+		<prefab name="../../Mods/pois/Prefabs/A16_business_red_brick_01" min_count="1" max_count="1" />
+		<prefab name="../../Mods/pois/Prefabs/A16_business_red_brick_02" min_count="1" max_count="1" />
+		<prefab name="../../Mods/pois/Prefabs/A16_business_red_brick_03" min_count="1" max_count="1" />
+		<prefab name="../../Mods/pois/Prefabs/A16_business_red_brick_04" min_count="1" max_count="1" />
+		<prefab name="../../Mods/pois/Prefabs/A16_business_red_brick_05" min_count="1" max_count="1" />
+		<prefab name="../../Mods/pois/Prefabs/A16_business_red_brick_06" min_count="1" max_count="1" />
+		<prefab name="../../Mods/pois/Prefabs/A16_business_red_brick_07" min_count="1" max_count="1" />
+		<prefab name="../../Mods/pois/Prefabs/A16_business_tan_brick_01" min_count="1" max_count="1" />
+		<prefab name="../../Mods/pois/Prefabs/A16_business_tan_brick_03" min_count="1" max_count="1" />
+		<prefab name="../../Mods/pois/Prefabs/A16_business_tan_brick_04" min_count="1" max_count="1" />
+		<prefab name="../../Mods/pois/Prefabs/A16_business_tan_brick_05" min_count="1" max_count="1" />
+	</append>	
+	
+<!-- End adding A16 POIs into RWG -->
+
+<!-- Begin adding new house POIs into RWG -->	
+	<append xpath="/rwgmixer/prefab_rules/prefab_rule[@name='residentialNew_Bldgs']">
+		<prefab name="../../Mods/pois/Prefabs/logans_pad" prob="10" min_count="1" min_repeat_distance="300"/>
+		<prefab name="../../Mods/pois/Prefabs/foursquarehouse_01" prob="50" min_count="1" min_repeat_distance="300"/>
+	</append>
+<!-- End adding new house POIs into RWG -->		
+
+<!-- Begin adding new business POIs into RWG -->	
+	<append xpath="/rwgmixer/prefab_rules/prefab_rule[@name='downtownGroup']">
+		<prefab name="../../Mods/pois/Prefabs/marybobs_pawn_shop" prob="50" min_count="1" min_repeat_distance="400"/>
+		<prefab name="../../Mods/pois/Prefabs/logans_bar" prob="50" min_count="1" min_repeat_distance="400"/>
+		<prefab name="../../Mods/pois/Prefabs/mini_golf" prob="75" min_count="1" min_repeat_distance="300"/>
+		<prefab name="../../Mods/pois/Prefabs/spartans_pizza" prob="50" min_count="1" min_repeat_distance="300"/>
+		<prefab name="../../Mods/pois/Prefabs/GranAuto_01" prob="75" min_count="1" min_repeat_distance="300"/>
+		<prefab name="../../Mods/pois/Prefabs/Als_Big_boy_beer_stand" prob="75" min_count="1" min_repeat_distance="300"/>
+		<prefab name="../../Mods/pois/Prefabs/SunshineElevatorHQ" prob="75" min_count="1" min_repeat_distance="300"/>
+	</append>
+	
+	
+<!-- Large POIs that do not spawn in for the most part in A18, hopeffully will change in A19-->
+	<append xpath="/rwgmixer/prefab_rules/prefab_rule[@name='wildernessGroup']"> 
+ 	<!--	<prefab name="../../Mods/pois/Prefabs/OCE_Airlines" prob="500" min_count="1" min_repeat_distance="500"/>  -->
+		<prefab name="../../Mods/pois/Prefabs/water_park" prob="500" min_count="1" min_repeat_distance="500"/>
+	</append>
+<!-- End adding new commercial POIs into RWG -->
+	
+	
+</configs>
