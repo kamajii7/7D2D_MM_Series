@@ -1,0 +1,4 @@
+<configs>
+	<set xpath="/gamestages/spawner[@name='WanderingHorde']/gamestage[(@stage = '05' or @stage = '06' or @stage = '10' or @stage = '11' or @stage = '22' or @stage = '36' or @stage = '43')]/spawn/@group">SpartansFamousChickenHorde</set>
+	<set xpath="/gamestages/spawner[@name='WanderingHorde']/gamestage[(@stage = '05' or @stage = '06' or @stage = '10' or @stage = '11' or @stage = '22' or @stage = '36' or @stage = '43')]/spawn/@num">20</set>
+</configs>

@@ -1,0 +1,44 @@
+<configs>
+	<append xpath="/items">
+		<!-- Adding
+                   Henny Penny
+                   Chicken Little
+		  -->
+		<item name="meleeHandHennyPenny">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Delay" value=".8"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1.7"/>
+				<property name="DamageEntity" value="10"/>
+				<property name="DamageBlock" value="6"/>
+				<property name="Buff" value="buffInjuryBleedingZombie"/>
+			</property>
+			<effect_group name="meleeHandAnimalWolf" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="earth"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".2" tags="buffInjuryBleedingZombie"/>
+			</effect_group>
+		</item>
+
+		<item name="meleeHandChickenLittle">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Delay" value=".4"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1.1"/>
+				<property name="DamageEntity" value="5"/>
+				<property name="DamageBlock" value="6"/>
+				<property name="Buff" value="buffIllFoodPoisoning01"/>
+			</property>
+			<effect_group name="meleeHandAnimalWolf" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="earth"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".1" tags="buffIllFoodPoisoning01"/>
+			</effect_group>
+		</item>
+
+	</append>
+</configs>

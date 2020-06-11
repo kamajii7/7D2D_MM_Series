@@ -1,0 +1,14 @@
+<configs>
+	<append xpath="/entitygroups">
+		<!-- Adding
+                   Henny Penny - Person sized chicken that inflicts bleeding and strikes fear in the hearts of players
+                   Chicken Little - Regular sized chicken as vicious as a zombie dog that inflicts food poisoning because who hasn't gotten food poisoning from chicken?
+		  -->
+
+		<entitygroup name="SpartansFamousChickenHorde">
+			<entity name="animalHennyPenny" prob="0.2"/>
+			<entity name="animalChickenLittle"/>
+		</entitygroup>
+
+	</append>
+</configs>

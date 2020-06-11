@@ -1,0 +1,19 @@
+<configs>
+	<insertAfter xpath="/spawning/biome[@name='wasteland']/spawn[@entitygroup='EnemyAnimalsWasteland']">
+		<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="SpartansFamousChickenHorde" spawnDeadChance="0" />
+	</insertAfter>
+
+	<set xpath="/spawning/biome/spawn[starts-with(@entitygroup,'Zombies')]|@maxcount">"1"</set>
+	<set xpath="/spawning/biome/spawn[starts-with(@entitygroup,'Zombies')]|@respawndelay">"2"</set>
+
+	<insertAfter xpath="/spawning/biome/spawn[starts-with(@entitygroup,'Zombies')]">
+		<spawn maxcount="1" respawndelay="3" time="Any" entitygroup="ZombieBadassGroup" />
+		<spawn maxcount="1" respawndelay="3" time="Any" entitygroup="ZombieSoldierGroup" />
+		<spawn maxcount="1" respawndelay="3" time="Any" entitygroup="ZombieHazMatOnlyGroup" />
+		<spawn maxcount="1" respawndelay="3" time="Any" entitygroup="ZombieFootballStadiumGroup" />
+		<spawn maxcount="1" respawndelay="2" time="Any" entitygroup="ZombieUtilityWorkerGroup" />
+		<spawn maxcount="1" respawndelay="2" time="Any" entitygroup="ZombieGhostTownGroup" />
+		<spawn maxcount="1" respawndelay="2" time="Any" entitygroup="HospitalGroup" />
+		<spawn maxcount="1" respawndelay="3" time="Any" entitygroup="ZombieBikerBarGroupGS1" />
+	</insertAfter>
+</configs>
