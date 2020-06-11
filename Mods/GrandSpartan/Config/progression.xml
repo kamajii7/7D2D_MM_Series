@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<append xpath="/progression/perks/perk[@name='perkDeepCuts']/effect_group/passive_effect[@name='RecipeTagUnlocked']/@tags">,Grand Spartans Blade,Mrs Spartans Blade</append>
+</configs>
