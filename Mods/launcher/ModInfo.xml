@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="launcher" />
+		<Description value="makes rocket launcher more fun" />
+		<Author value="loganjhunter" />
+		<Version value="1.0" />
+		<Website value="" />
+	</ModInfo>
+</xml>

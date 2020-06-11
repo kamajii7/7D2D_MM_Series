@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+<!-- Start for Rocket Launcher rework -->
+	
+	<set xpath="/items/item[@name='gunRocketLauncher']/property[@class='Action0']/property[@name='Magazine_items']/@value">ammoRocketHE</set>
+	<set xpath="/items/item[@name='gunRocketLauncher']/property[@class='Action0']/property[@name='Sound_start']/@value">Animals/Chicken/chickendeath</set>
+	<set xpath="/items/item[@name='gunRocketLauncher']/property[@class='Action0']/property[@name='Sound_reload']/@value">Animals/Chicken/chickenpain</set>
+	
+	<set xpath="/items/item[@name='ammoRocketHE']/property[@name='Meshfile']/@value">Animals/CHICKEN/chickenPrefab</set>
+	<set xpath="/items/item[@name='ammoRocketHE']/effect_group/passive_effect[@name='BlockDamage']/@value">0</set>
+	<set xpath="/items/item[@name='ammoRocketHE']/effect_group/display_value[@name='dExDamageBlock']/@value">0</set>
+	<set xpath="/items/item[@name='ammoRocketHE']/property[@class='Action1']/property[@name='Explosion.ParticleIndex']/@value">1</set>
+	<set xpath="/items/item[@name='ammoRocketHE']/property[@class='Action1']/property[@name='Explosion.RadiusEntities']/@value">1</set>
+	<set xpath="/items/item[@name='ammoRocketHE']/property[@class='Action1']/property[@name='Explosion.RadiusBlocks']/@value">1</set>
+	<set xpath="/items/item[@name='ammoRocketHE']/property[@class='Action1']/property[@name='Gravity']/@value">-100</set>
+	<set xpath="/items/item[@name='ammoRocketHE']/property[@class='Action1']/property[@name='FlyTime']/@value">0</set>
+	<set xpath="/items/item[@name='ammoRocketHE']/property[@class='Action1']/property[@name='LifeTime']/@value">4</set>
+	
+	
+<!-- End for Rocket Launcher rework -->
+</configs>
